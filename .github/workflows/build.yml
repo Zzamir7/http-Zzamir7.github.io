@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: build
         run: |
-            pacman -Syu python python-pip
+            pacman -Syu python python-pip --noconfrim
             pip install jdatetime markdown-it-py
             python generate.py
       - name: deploy
