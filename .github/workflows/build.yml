@@ -21,7 +21,7 @@ jobs:
       - name: build
         run: |
             pacman -Syu python python-pip --noconfirm
-            pip install jdatetime markdown-it-py
+            pip install jdatetime markdown-it-py --break-system-packages
             python generate.py
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
