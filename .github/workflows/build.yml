@@ -9,6 +9,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+      options: --privileged
     permissions:
       contents: write
     concurrency:
@@ -17,9 +20,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: build
         run: |
-            apt install python3 python3-pip
+            pacman -Syu python python-pip
             pip install jdatetime markdown-it-py
-            python3 generate.py
+            python generate.py
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
