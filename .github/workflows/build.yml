@@ -22,10 +22,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: build
         run: |
-            pacman -Syu python python-pip tree --noconfirm
+            pacman -Syu python python-pip git github-cli --noconfirm
             pip install jdatetime markdown-it-py --break-system-packages
             python generate.py
-            tree
+            
       - name: Deploy to GH Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
