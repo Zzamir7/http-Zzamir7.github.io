@@ -12,7 +12,7 @@ jobs:
     container:
       image: archlinux:latest
       options: --privileged
-    permissions: all
+    permissions: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
