@@ -25,9 +25,8 @@ jobs:
             pacman -Syu python python-pip --noconfirm
             pip install jdatetime markdown-it-py --break-system-packages
             python generate.py
-      - name: deploy
+      - name: Deploy to GH Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
+          publish_dir: output
