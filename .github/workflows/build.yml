@@ -13,7 +13,9 @@ jobs:
       image: archlinux:latest
       options: --privileged
     permissions:
-      contents: write
+      contents: read
+      pages: write
+      id-token: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
