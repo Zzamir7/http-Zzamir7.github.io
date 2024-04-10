@@ -54,7 +54,7 @@ def get_jdate_str(jdate):
 
 def generate_index(index_html_template, index_post_list_template, post_details):
 
-    post_details.sort(key=lambda a:a[2], reverse=True)
+    post_details.sort(key=lambda a:a[2], reverse=False)
 
     posts_html_list = ''
     for post in post_details:
